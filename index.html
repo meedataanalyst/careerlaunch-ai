@@ -2,17 +2,29 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>CareerLaunch AI</title>
+    
+    <!-- App Icons -->
+    <link rel="icon" type="image/svg+xml" href="/icon.svg">
+    <link rel="apple-touch-icon" href="/icon.svg">
+    
+    <!-- iOS Web App Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="CareerLaunch">
+    
     <!-- Tailwind CSS (CDN for simplicity) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <!-- HTML2PDF Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
       body {
         font-family: 'Inter', sans-serif;
+        /* Prevent elastic scrolling on iOS for a native feel */
+        overscroll-behavior-y: none;
       }
       /* Custom scrollbar for text areas */
       textarea::-webkit-scrollbar {
@@ -22,11 +34,11 @@
         background: transparent;
       }
       textarea::-webkit-scrollbar-thumb {
-        background: #cbd5e1;
+        background: #4f46e5; /* Indigo-600 */
         border-radius: 4px;
       }
       textarea::-webkit-scrollbar-thumb:hover {
-        background: #94a3b8;
+        background: #4338ca; /* Indigo-700 */
       }
       
       @media print {
@@ -69,7 +81,7 @@
 </script>
 <link rel="stylesheet" href="/index.css">
 </head>
-  <body class="bg-slate-100 text-slate-900 overflow-hidden">
+  <body class="bg-slate-950 text-slate-100 overflow-hidden selection:bg-indigo-500 selection:text-white">
     <div id="root" class="h-screen w-screen flex flex-col"></div>
     <!-- Entry Point for Vite -->
     <script type="module" src="/index.tsx"></script>
